@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins',sens-serif ;
+}
+body, .time, .left-side, .right-side , .right-top, .right-down{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.digital-clock,.time, .right-side, .right-top,.right-down {
+    position: relative;
+}
+body{
+    min-height: 80vh;
+    background-color: rgb(27, 67, 98);
+}
+.digital-clock::before{
+    content: '';
+    position:absolute;
+    background: linear-gradient(45deg, blue ,orange,green);
+    background-size: 200% 200%;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right:-5px;
+    z-index:-1;
+    filter: blur(30px);
+    animation: glowing 5s ease infinite;
+    
+}
+@keyframes glowing{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    0%{
+        background-position: 0% 50%;
+    }
+}
+
+
+.digital-clock{
+    color: #fff;
+    background-color:rgb(198, 10, 161) ;
+    width: 425px;
+    padding: 20px 45px;
+    /* box-shadow: 0 5px 25px rgba(red, green, blue, alpha); */
+    border-radius: 10px;
+}
+#hours{
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 120px;
+    font-size: 8em;
+    background: -webkit-linear-gradient(90deg, rgb(201, 110, 219),white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    
+}
+.right-side{
+    flex-direction: column;
+}
+#dots{
+    font-size: 4em;
+    transform: translatey(-3px);
+    color: gray;
+}
+#minuts{
+    font-size: 5em;
+    font-weight:500;
+    margin-left: 10px;
+    transform: translateY(1px);
+    background: -webkit-linear-gradient(90deg, rgb(44, 152, 234),white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.right-down{
+    margin-left: 20px;
+    transform: translateY(-17px);
+}
+#period, #second{
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-left: 10px;
+    background: -webkit-linear-gradient(90deg, rgb(241, 188, 114),white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+#second{
+    color: #fff;
+    background: -webkit-linear-gradient(90deg, rgb(162, 228, 95),white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
